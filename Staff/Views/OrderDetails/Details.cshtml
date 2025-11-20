@@ -1,0 +1,166 @@
+﻿@model Staff.Models.OrdersDetailss
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6B48FF, #00DDEB);
+            min-height: 100vh;
+            padding: 40px;
+            color: #ffffff;
+        }
+
+        h2 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h4 {
+            color: #E0E0FF;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .details-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dl-horizontal {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+            .dl-horizontal dt {
+                color: #E0E0FF;
+                font-weight: 500;
+                width: 200px;
+                text-align: right;
+                padding: 10px 15px;
+            }
+
+            .dl-horizontal dd {
+                color: #ffffff;
+                flex: 1;
+                padding: 10px 15px;
+                margin: 0;
+            }
+
+        hr {
+            border-color: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
+
+        .action-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .edit-link {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            color: #ffffff;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+            .edit-link:hover {
+                background: linear-gradient(45deg, #3d8cdc, #00d0dc);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+                color: #ffffff;
+                text-decoration: none;
+            }
+
+        .back-link {
+            background: linear-gradient(45deg, #6B48FF, #00DDEB);
+            color: #ffffff;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+            .back-link:hover {
+                background: linear-gradient(45deg, #5436CC, #00BAC7);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(107, 72, 255, 0.4);
+                color: #ffffff;
+                text-decoration: none;
+            }
+    </style>
+</head>
+<body>
+    <div class="details-container">
+        <h2> Order Details</h2>
+        <hr />
+
+        <div>
+            <h4>Order Detail</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>@Html.DisplayNameFor(model => model.Pharmacyname)</dt>
+                <dd>@Html.DisplayFor(model => model.Pharmacyname)</dd>
+
+                <dt>@Html.DisplayNameFor(model => model.Drugname)</dt>
+                <dd>@Html.DisplayFor(model => model.Drugname)</dd>
+
+                <dt>@Html.DisplayNameFor(model => model.Quantity)</dt>
+                <dd>@Html.DisplayFor(model => model.Quantity)</dd>
+
+                <dt>@Html.DisplayNameFor(model => model.price)</dt>
+                <dd>@Html.DisplayFor(model => model.price)</dd>
+
+                <dt>@Html.DisplayNameFor(model => model.TotalCost)</dt>
+                <dd>@Html.DisplayFor(model => model.TotalCost)</dd>
+
+                <dt>@Html.DisplayNameFor(model => model.QuantityOrdered)</dt>
+                <dd>@Html.DisplayFor(model => model.QuantityOrdered)</dd>
+
+                <dt>@Html.DisplayNameFor(model => model.orderDate)</dt>
+                <dd>@Html.DisplayFor(model => model.orderDate)</dd>
+
+                <dt>@Html.DisplayNameFor(model => model.Status)</dt>
+                <dd>@Html.DisplayFor(model => model.Status)</dd>
+            </dl>
+        </div>
+
+        <div class="action-links">
+
+            @Html.ActionLink(" Back to List", "Index", null, new { @class = "back-link" })
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

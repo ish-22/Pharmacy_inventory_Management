@@ -1,0 +1,126 @@
+﻿@model Admin.Models.Staff
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .container {
+        padding: 20px;
+        max-width: 800px;
+        margin: 20px auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        color: #2c3e50;
+        text-align: center;
+        padding: 20px 0;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    h4 {
+        color: #34495e;
+        margin: 20px 0;
+    }
+
+    .dl-horizontal {
+        padding: 20px;
+    }
+
+        .dl-horizontal dt {
+            color: #2c3e50;
+            font-weight: 600;
+            width: 150px;
+            padding: 10px 0;
+        }
+
+        .dl-horizontal dd {
+            margin-left: 180px;
+            padding: 10px 0;
+            color: #555;
+        }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background: #eee;
+        margin: 20px 0;
+    }
+
+    .btn-edit {
+        display: inline-block;
+        padding: 8px 20px;
+        background: #e67e22;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-edit:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+    .btn-back {
+        display: inline-block;
+        padding: 8px 20px;
+        background: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-back:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+    .actions {
+        padding: 20px;
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <h2>Staff Details</h2>
+
+    <div>
+        <h4>Staff Information</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Password)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+        </dl>
+    </div>
+
+    <div class="actions">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn-edit" })
+        <span>|</span>
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn-back" })
+    </div>
+</div>

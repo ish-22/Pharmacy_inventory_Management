@@ -1,0 +1,143 @@
+﻿@model IEnumerable<Admin.Models.Tender>
+
+@{
+    ViewBag.Title = "Tender List";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tender List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6B48FF, #00DDEB);
+            min-height: 100vh;
+            padding: 40px;
+            color: #ffffff;
+        }
+
+        h2 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .table {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .thead-dark {
+            background: rgba(107, 72, 255, 0.3);
+        }
+
+        .table th {
+            color: #E0E0FF;
+            padding: 15px;
+            border: none;
+        }
+
+        .table td {
+            color: black;
+            padding: 15px;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .action-btn {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        .edit-btn {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+        }
+
+            .edit-btn:hover {
+                background: linear-gradient(45deg, #3d8cdc, #00d0dc);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 10px rgba(79, 172, 254, 0.4);
+            }
+
+        .details-btn {
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+        }
+
+            .details-btn:hover {
+                background: linear-gradient(45deg, #e55a5a, #e77d42);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+            }
+
+        .delete-btn {
+            background: linear-gradient(45deg, #ff3f34, #ff6b6b);
+        }
+
+            .delete-btn:hover {
+                background: linear-gradient(45deg, #e02e23, #e55a5a);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 10px rgba(255, 63, 52, 0.4);
+            }
+    </style>
+</head>
+<body>
+    <h2>Tender List</h2>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.DrugName)</th>
+                <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+                <th>@Html.DisplayNameFor(model => model.Description)</th>
+                <th>@Html.DisplayNameFor(model => model.publishedDate)</th>
+                <th>@Html.DisplayNameFor(model => model.closingDate)</th>
+                <th>@Html.DisplayNameFor(model => model.Status)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.DrugName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.publishedDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.closingDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "action-btn edit-btn" })
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "action-btn details-btn" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "action-btn delete-btn" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

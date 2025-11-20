@@ -1,0 +1,99 @@
+﻿@model Admin.Models.Supplier
+
+@{
+    ViewBag.Title = "Delete Supplier";
+}
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background: #f8d7da; /* Light red background for warning */
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 500px;
+        margin-top: 40px;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #dc3545;
+        text-align: center;
+    }
+
+    .alert-warning {
+        background: #fff3cd;
+        color: #856404;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .btn-custom {
+        border-radius: 5px;
+        font-weight: bold;
+        padding: 10px 15px;
+    }
+
+    .btn-delete {
+        background: #dc3545;
+        color: white;
+    }
+
+        .btn-delete:hover {
+            background: #b02a37;
+        }
+
+    .btn-back {
+        background: #6c757d;
+        color: white;
+    }
+
+        .btn-back:hover {
+            background: #495057;
+        }
+
+    label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .form-control {
+        border-radius: 5px;
+    }
+</style>
+
+<!-- Delete Confirmation Container -->
+<div class="container">
+    <h2>Delete Supplier</h2>
+    <hr />
+
+    <!-- Warning Message -->
+    <div class="alert alert-warning">
+        <i class="fas fa-exclamation-triangle"></i> Are you sure you want to delete this supplier?
+    </div>
+
+    <dl class="dl-horizontal">
+        <dt>Email:</dt>
+        <dd>@Html.DisplayFor(model => model.Email)</dd>
+
+        <dt>Password:</dt>
+        <dd>@Html.DisplayFor(model => model.Password)</dd>
+    </dl>
+
+    <!-- Delete Form -->
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-custom btn-delete">Delete</button>
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-custom btn-back ms-2" })
+        </div>
+    }
+</div>

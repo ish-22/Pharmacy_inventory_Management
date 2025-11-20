@@ -1,0 +1,118 @@
+﻿@model Pharmacy.Models.ManufacturingPlant
+
+@{
+    ViewData["Title"] = "Manufacturing Plant Details";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+        padding: 40px 20px;
+    }
+
+    .details-card {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        padding: 30px;
+        max-width: 600px;
+        margin: 0 auto;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .card-header {
+        background: linear-gradient(to right, #f6d365, #fda085);
+        color: #fff;
+        padding: 15px 0;
+        margin: -30px -30px 30px -30px;
+        border-radius: 20px 20px 0 0;
+        text-align: center;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-subheader {
+        color: #d97706;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    dt {
+        color: #d97706;
+        font-weight: 600;
+    }
+
+    dd {
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .btn-warning {
+        background: linear-gradient(to right, #f6d365, #fda085);
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+        .btn-warning:hover {
+            background: linear-gradient(to right, #fda085, #f6d365);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(246, 211, 101, 0.4);
+        }
+
+    .btn-secondary {
+        background: linear-gradient(to right, #6c757d, #adb5bd);
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-secondary:hover {
+            background: linear-gradient(to right, #adb5bd, #6c757d);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+        }
+</style>
+
+<div class="container">
+    <div class="details-card">
+        <h2 class="card-header">Manufacturing Plant Details</h2>
+
+        <h4 class="form-subheader">Plant Information</h4>
+        <dl class="row">
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Location)
+            </dd>
+
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Contact)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Contact)
+            </dd>
+        </dl>
+
+        <div class="text-end">
+            <a href="@Url.Action("Edit", new { id = Model.PlantId })" class="btn btn-warning me-2">
+                <i class="fas fa-edit me-1"></i> Edit
+            </a>
+            <a href="@Url.Action("Index")" class="btn btn-secondary">
+                <i class="fas fa-arrow-left me-1"></i> Back to List
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+}

@@ -1,0 +1,92 @@
+﻿@model Supplier.Models.Supplier
+
+@{
+    ViewBag.Title = "Supplier Details";
+}
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background: #f4f7fc; /* Light gray background */
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 600px;
+        margin-top: 30px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #333;
+        text-align: center;
+    }
+
+    .card {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-custom {
+        border-radius: 5px;
+        font-weight: bold;
+        padding: 8px 15px;
+        text-decoration: none;
+    }
+
+    .btn-edit {
+        background: #007bff;
+        color: white;
+    }
+
+        .btn-edit:hover {
+            background: #0056b3;
+        }
+
+    .btn-back {
+        background: #6c757d;
+        color: white;
+    }
+
+        .btn-back:hover {
+            background: #495057;
+        }
+
+    dt {
+        font-weight: bold;
+        color: #555;
+    }
+
+    dd {
+        color: #333;
+    }
+</style>
+
+<!-- Details Container -->
+<div class="container">
+    <h2>Supplier Details</h2>
+    <hr />
+
+    <div class="card">
+        <dl class="row">
+            <dt class="col-sm-4">@Html.LabelFor(model => model.Email)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-4">Password</dt>
+            <dd class="col-sm-8">
+                <span>********</span> <!-- Hide Password -->
+            </dd>
+        </dl>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mt-4 text-center">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-custom btn-edit" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-custom btn-back ms-2" })
+    </div>
+</div>

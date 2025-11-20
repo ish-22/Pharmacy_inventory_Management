@@ -1,0 +1,157 @@
+﻿@model Admin.Models.Admin
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6B48FF, #00DDEB);
+            min-height: 100vh;
+            padding: 40px;
+            color: #ffffff;
+        }
+
+        h2 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #FF6B6B;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h4 {
+            color: #E0E0FF;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .delete-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dl-horizontal {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+            .dl-horizontal dt {
+                color: #E0E0FF;
+                font-weight: 500;
+                width: 120px;
+                text-align: right;
+                padding: 10px 15px;
+            }
+
+            .dl-horizontal dd {
+                color: #ffffff;
+                flex: 1;
+                padding: 10px 15px;
+                margin: 0;
+            }
+
+        hr {
+            border-color: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
+
+        .form-actions {
+            text-align: center;
+        }
+
+        .btn-delete {
+            background: linear-gradient(45deg, #ff3f34, #ff6b6b);
+            color: #ffffff;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+
+            .btn-delete:hover {
+                background: linear-gradient(45deg, #e02e23, #e55a5a);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(255, 63, 52, 0.4);
+            }
+
+        .back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #6B48FF, #00DDEB);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+            .back-link:hover {
+                background: linear-gradient(45deg, #5436CC, #00BAC7);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(107, 72, 255, 0.4);
+                color: #ffffff;
+                text-decoration: none;
+            }
+    </style>
+</head>
+<body>
+    <div class="delete-container">
+        <h2>Delete</h2>
+
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <h4>Admin</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Password)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Password)
+                </dd>
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn-delete" />
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "back-link" })
+                </div>
+            }
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+﻿@model Staff.Models.OrdersDetailss
+
+@{
+    ViewBag.Title = "Edit Order";
+}
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Soft Pink Gradient */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 60%;
+        margin: 50px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        width: 100%;
+    }
+
+    .btn-custom {
+        border-radius: 5px;
+        font-weight: bold;
+        padding: 10px 15px;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        margin: 10px 5px;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-save {
+        background: #28a745; /* Green */
+    }
+
+        .btn-save:hover {
+            background: #218838;
+        }
+
+    .btn-back {
+        background: #007bff; /* Blue */
+    }
+
+        .btn-back:hover {
+            background: #0056b3;
+        }
+</style>
+
+<!-- Main Container -->
+<div class="container">
+    <h2>Edit Order</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Order Details</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.OrderId)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Pharmacyname)
+                @Html.EditorFor(model => model.Pharmacyname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pharmacyname, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Drugname)
+                @Html.EditorFor(model => model.Drugname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Drugname, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Quantity)
+                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.price)
+                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TotalCost)
+                @Html.EditorFor(model => model.TotalCost, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalCost, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.QuantityOrdered)
+                @Html.EditorFor(model => model.QuantityOrdered, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.QuantityOrdered, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.orderDate)
+                @Html.EditorFor(model => model.orderDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.orderDate, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Status)
+                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group text-center">
+                <input type="submit" value="Save Changes" class="btn-custom btn-save" />
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn-custom btn-back" })
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,157 @@
+﻿@model IEnumerable<Admin.Models.Supplier>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier Index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6B48FF, #00DDEB);
+            min-height: 100vh;
+            padding: 40px;
+            color: #ffffff;
+        }
+
+        h2 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .create-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #40c057, #82c91e);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+            .create-link:hover {
+                background: linear-gradient(45deg, #34a148, #6ba718);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(64, 192, 87, 0.4);
+                color: #ffffff;
+                text-decoration: none;
+            }
+
+        .table {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+            .table th {
+                background: rgba(107, 72, 255, 0.3);
+                color: #E0E0FF;
+                padding: 15px;
+                border: none;
+            }
+
+            .table td {
+                color: black;
+                padding: 15px;
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .table tr:last-child td {
+                border-bottom: none;
+            }
+
+            .table tr:hover {
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+        .action-link {
+            color: #E0E0FF;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+            .action-link:hover {
+                color: #ffffff;
+                background: rgba(107, 72, 255, 0.4);
+                text-decoration: none;
+            }
+
+        .edit-link {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+        }
+
+            .edit-link:hover {
+                background: linear-gradient(45deg, #3d8cdc, #00d0dc);
+            }
+
+        .details-link {
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+        }
+
+            .details-link:hover {
+                background: linear-gradient(45deg, #e55a5a, #e77d42);
+            }
+
+        .delete-link {
+            background: linear-gradient(45deg, #ff3f34, #ff6b6b);
+        }
+
+            .delete-link:hover {
+                background: linear-gradient(45deg, #e02e23, #e55a5a);
+            }
+    </style>
+</head>
+<body>
+    <h2>Supplier Index</h2>
+
+    <p class="text-center">
+        @Html.ActionLink("Create New", "Create", null, new { @class = "create-link" })
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "action-link edit-link" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "action-link details-link" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "action-link delete-link" })
+                </td>
+            </tr>
+        }
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

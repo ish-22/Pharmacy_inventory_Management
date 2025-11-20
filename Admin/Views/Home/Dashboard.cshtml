@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "Admin Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-image: url("https://static.vecteezy.com/system/resources/previews/020/459/721/non_2x/healthcare-and-technology-concept-with-icons-minimal-background-for-pharmaceutical-industry-health-care-business-medicine-medical-research-and-science-illustration-vector.jpg");
+            min-height: 100vh;
+            color: #ffffff;
+        }
+
+        .navbar {
+            background: rgba(43, 29, 107, 0.9) !important;
+            backdrop-filter: blur(5px);
+        }
+
+        .navbar-brand, .nav-link {
+            color: #E0E0FF !important;
+            transition: color 0.3s ease;
+        }
+
+            .nav-link:hover {
+                color: #ffffff !important;
+            }
+
+        .card {
+            text-align: center;
+            padding: 25px;
+            color: #ffffff;
+            font-size: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+            .card h3 {
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+
+            .card.bg-warning {
+                background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            }
+
+            .card.bg-primary {
+                background: linear-gradient(45deg, #4facfe, #00f2fe);
+            }
+
+            .card.bg-success {
+                background: linear-gradient(45deg, #40c057, #82c91e);
+            }
+
+        .chart-container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h2 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Drug")">Drug</a></li>
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Tender")">Tenders</a></li>
+                  
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "orderdetails")">Order Details</a></li>
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Supplier")">Suppliers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Staff")">Staff</a></li>
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Pharmacy")">Pharmacy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout", "Home")">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="container-fluid mt-4">
+        <h2 class="text-center">Dashboard</h2>
+
+    </div>
+
+      
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+

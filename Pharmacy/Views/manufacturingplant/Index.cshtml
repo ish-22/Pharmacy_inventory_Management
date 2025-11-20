@@ -1,0 +1,202 @@
+﻿@model IEnumerable<Pharmacy.Models.ManufacturingPlant>
+
+@{
+    ViewData["Title"] = "Manufacturing Plants";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+        min-height: 100vh;
+    }
+
+    .container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+    }
+
+    .card-header {
+        background: linear-gradient(to right, #28a745, #71cf97);
+        border-bottom: none;
+        padding: 20px;
+    }
+
+        .card-header h2 {
+            margin: 0;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+    .card-body {
+        padding: 30px;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 10px rgba(40, 167, 69, 0.3);
+        }
+
+    .btn-success {
+        background: linear-gradient(to right, #28a745, #71cf97);
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-success:hover {
+            background: linear-gradient(to right, #71cf97, #28a745);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+
+    .table {
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+        .table thead {
+            background: linear-gradient(to right, #2a5298, #1e3c72);
+        }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background: rgba(245, 247, 250, 0.7);
+    }
+
+    .btn-sm {
+        border-radius: 8px;
+        padding: 6px 12px;
+        font-weight: 600;
+    }
+
+    .btn-warning {
+        background: linear-gradient(to right, #ffc107, #ffd761);
+        border: none;
+    }
+
+        .btn-warning:hover {
+            background: linear-gradient(to right, #ffd761, #ffc107);
+        }
+
+    .btn-info {
+        background: linear-gradient(to right, #17a2b8, #66c9d8);
+        border: none;
+    }
+
+        .btn-info:hover {
+            background: linear-gradient(to right, #66c9d8, #17a2b8);
+        }
+
+    .btn-danger {
+        background: linear-gradient(to right, #dc3545, #ff6b6b);
+        border: none;
+    }
+
+        .btn-danger:hover {
+            background: linear-gradient(to right, #ff6b6b, #dc3545);
+        }
+
+    .btn-secondary {
+        background: linear-gradient(to right, #6c757d, #adb5bd);
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+    }
+
+        .btn-secondary:hover {
+            background: linear-gradient(to right, #adb5bd, #6c757d);
+        }
+</style>
+
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h2>Manufacturing Plants</h2>
+        </div>
+        <div class="card-body">
+            <!-- Search Bar -->
+            <div class="row mb-4 align-items-center">
+                <div class="col-md-6">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search by location or contact..." onkeyup="searchPlants()">
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="@Url.Action("Create")" class="btn btn-success">
+                        <i class="fas fa-plus me-1"></i> Create New
+                    </a>
+                </div>
+            </div>
+
+            <!-- Manufacturing Plants Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered text-center" id="plantsTable">
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Contact</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Location)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Contact)</td>
+                                <td>
+                                    <a href="@Url.Action("Edit", new { id = item.PlantId })" class="btn btn-warning btn-sm">
+                                        <i class="fas fa-edit me-1"></i> Edit
+                                    </a>
+                                    <a href="@Url.Action("Details", new { id = item.PlantId })" class="btn btn-info btn-sm">
+                                        <i class="fas fa-info-circle me-1"></i> Details
+                                    </a>
+                                    <a href="@Url.Action("Delete", new { id = item.PlantId })" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash me-1"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Back to Dashboard Button -->
+            <div class="text-center mt-4">
+                <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">
+                    <i class="fas fa-home me-1"></i> Back to Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function searchPlants() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let rows = document.querySelectorAll("#plantsTable tbody tr");
+
+            rows.forEach(row => {
+                let text = row.innerText.toLowerCase();
+                row.style.display = text.includes(input) ? "" : "none";
+            });
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+}

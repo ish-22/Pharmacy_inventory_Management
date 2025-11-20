@@ -1,0 +1,179 @@
+﻿@model IEnumerable<Pharmacy.Models.Drug>
+
+@{
+    ViewBag.Title = "Drug Inventory";
+}
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient Blue Background */
+        font-family: 'Arial', sans-serif;
+    }
+
+    .container-box {
+        max-width: 1000px;
+        margin: 50px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+        background: #007bff;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .table thead {
+        background: #343a40;
+        color: white;
+    }
+
+    .table-hover tbody tr:hover {
+        background: #e3f2fd;
+        transition: 0.3s;
+    }
+
+    .btn-custom {
+        font-weight: bold;
+        border-radius: 6px;
+        padding: 8px 12px;
+        transition: 0.3s;
+    }
+
+    .btn-create {
+        background: #28a745;
+        color: white;
+    }
+
+        .btn-create:hover {
+            background: #218838;
+        }
+
+    .btn-edit {
+        background: #ffc107;
+        color: white;
+    }
+
+        .btn-edit:hover {
+            background: #e0a800;
+        }
+
+    .btn-details {
+        background: #17a2b8;
+        color: white;
+    }
+
+        .btn-details:hover {
+            background: #138496;
+        }
+
+    .btn-delete {
+        background: #dc3545;
+        color: white;
+    }
+
+        .btn-delete:hover {
+            background: #b02a37;
+        }
+
+    .search-box {
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        border: 1px solid #007bff;
+    }
+
+        .search-box:focus {
+            outline: none;
+            box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+        }
+</style>
+
+<!-- Drug Inventory Container -->
+<div class="container-box">
+    <div class="card shadow-lg border-primary">
+        <div class="card-header text-center">
+            <h2>Drug Inventory</h2>
+        </div>
+        <div class="card-body">
+            <!-- Search Bar -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <input type="text" id="searchInput" class="form-control search-box" placeholder="🔍 Search by name, type, or warehouse ID..." onkeyup="searchDrugs()">
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="@Url.Action("Create")" class="btn btn-create btn-custom">
+                        <i class="fas fa-plus"></i> Create New
+                    </a>
+                </div>
+            </div>
+
+            <!-- Drug Inventory Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered shadow-sm text-center" id="drugTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Warehouse ID</th>
+                            <th>Stock Quantity</th>
+                            <th>Expiry Date</th>
+                            <th>Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                <td>@Html.DisplayFor(modelItem => item.WarehouseID)</td>
+                                <td>@Html.DisplayFor(modelItem => item.StockQuantity)</td>
+                                <td>@Html.DisplayFor(modelItem => item.ExpiryDate)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Type)</td>
+                                <td>
+                                    <a href="@Url.Action("Edit", new { id = item.DrugId })" class="btn btn-edit btn-custom btn-sm">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                    <a href="@Url.Action("Details", new { id = item.DrugId })" class="btn btn-details btn-custom btn-sm">
+                                        <i class="fas fa-info-circle"></i> Details
+                                    </a>
+                                    <a href="@Url.Action("Delete", new { id = item.DrugId })" class="btn btn-delete btn-custom btn-sm">
+                                        <i class="fas fa-trash"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Back to Dashboard Button -->
+            <div class="text-center mt-3">
+                <a href="@Url.Action("Index", "Home")" class="btn btn-secondary btn-custom">
+                    <i class="fas fa-home"></i> Back to Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Search Function -->
+<script>
+    function searchDrugs() {
+        let input = document.getElementById("searchInput").value.toLowerCase();
+        let rows = document.querySelectorAll("#drugTable tbody tr");
+
+        rows.forEach(row => {
+            let text = row.innerText.toLowerCase();
+            row.style.display = text.includes(input) ? "" : "none";
+        });
+    }
+</script>
+
+<!-- Include FontAwesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">

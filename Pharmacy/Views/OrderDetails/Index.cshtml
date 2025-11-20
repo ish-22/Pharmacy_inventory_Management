@@ -1,0 +1,145 @@
+﻿@model IEnumerable<Pharmacy.Models.OrdersDetailss>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background: linear-gradient(135deg, #6a11cb, #2575fc); /* Blue-Purple Gradient */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 90%;
+        margin: 50px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .btn-custom {
+        border-radius: 5px;
+        font-weight: bold;
+        padding: 8px 12px;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        margin: 5px;
+        text-align: center;
+    }
+
+    .btn-create {
+        background: #28a745; /* Green */
+    }
+
+        .btn-create:hover {
+            background: #218838;
+        }
+
+    .btn-edit {
+        background: #007bff; /* Blue */
+    }
+
+        .btn-edit:hover {
+            background: #0056b3;
+        }
+
+    .btn-details {
+        background: #ffc107; /* Yellow */
+        color: black;
+    }
+
+        .btn-details:hover {
+            background: #e0a800;
+        }
+
+    .btn-delete {
+        background: #dc3545; /* Red */
+    }
+
+        .btn-delete:hover {
+            background: #c82333;
+        }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+        .table th, .table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background: #007bff;
+            color: white;
+        }
+
+        .table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .table tr:hover {
+            background: #ddd;
+        }
+</style>
+
+<!-- Main Container -->
+<div class="container">
+    <h2>Orders List</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-custom btn-create" })
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Pharmacyname)</th>
+            <th>@Html.DisplayNameFor(model => model.Drugname)</th>
+            <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+            <th>@Html.DisplayNameFor(model => model.price)</th>
+            <th>@Html.DisplayNameFor(model => model.TotalCost)</th>
+            <th>@Html.DisplayNameFor(model => model.QuantityOrdered)</th>
+            <th>@Html.DisplayNameFor(model => model.orderDate)</th>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Pharmacyname)</td>
+                <td>@Html.DisplayFor(modelItem => item.Drugname)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>@Html.DisplayFor(modelItem => item.price)</td>
+                <td>@Html.DisplayFor(modelItem => item.TotalCost)</td>
+                <td>@Html.DisplayFor(modelItem => item.QuantityOrdered)</td>
+                <td>@Html.DisplayFor(modelItem => item.orderDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }, new { @class = "btn btn-custom btn-edit" })
+                    @Html.ActionLink("Details", "Details", new { id = item.OrderId }, new { @class = "btn btn-custom btn-details" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.OrderId }, new { @class = "btn btn-custom btn-delete" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

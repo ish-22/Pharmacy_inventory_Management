@@ -1,0 +1,177 @@
+﻿@model Supplier.Models.Tender
+
+@{
+    ViewBag.Title = "Edit Tender";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Tender</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6B48FF, #00DDEB);
+            min-height: 100vh;
+            padding: 40px;
+            color: #ffffff;
+        }
+
+        h2 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-label {
+            color: #E0E0FF;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .form-control, .form-select {
+            background: rgba(255, 255, 255, 0.25);
+            border: none;
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+            .form-control::placeholder {
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            .form-control:focus, .form-select:focus {
+                background: rgba(255, 255, 255, 0.3);
+                box-shadow: none;
+                border: none;
+                color: #ffffff;
+            }
+
+        .text-danger {
+            color: #FF6B6B !important;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .btn-save {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            color: #ffffff;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-save:hover {
+                background: linear-gradient(45deg, #3d8cdc, #00d0dc);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+            }
+
+        .btn-back {
+            background: linear-gradient(45deg, #6B48FF, #00DDEB);
+            color: #ffffff;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-back:hover {
+                background: linear-gradient(45deg, #5436CC, #00BAC7);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(107, 72, 255, 0.4);
+                color: #ffffff;
+                text-decoration: none;
+            }
+
+        .mb-3 {
+            margin-bottom: 20px !important;
+        }
+
+        .d-flex {
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Edit Tender</h2>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.DrugName, new { @class = "form-label" })
+                @Html.EditorFor(model => model.DrugName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DrugName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Quantity, new { @class = "form-label" })
+                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Description, new { @class = "form-label" })
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = "3" })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.publishedDate, new { @class = "form-label" })
+                <input type="date" class="form-control" id="publishedDate" name="publishedDate" value="@Model.publishedDate.ToString("yyyy-MM-dd")" />
+                @Html.ValidationMessageFor(model => model.publishedDate, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.closingDate, new { @class = "form-label" })
+                <input type="date" class="form-control" id="closingDate" name="closingDate" value="@Model.closingDate.ToString("yyyy-MM-dd")" />
+                @Html.ValidationMessageFor(model => model.closingDate, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Status, new { @class = "form-label" })
+                <select class="form-select" id="Status" name="Status">
+                    <option value="Open" @(Model.Status == "Accept" ? "selected" : "")>Accept</option>
+                    <option value="Closed" @(Model.Status == "Reject" ? "selected" : "")>Reject</option>
+                    <option value="Pending" @(Model.Status == "Pending" ? "selected" : "")>Pending</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn-save">
+                    <i class="fas fa-save"></i> Save Changes
+                </button>
+                <a href="@Url.Action("Index")" class="btn-back">
+                    <i class="fas fa-arrow-left"></i> Back to List
+                </a>
+            </div>
+        }
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

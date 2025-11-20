@@ -1,0 +1,114 @@
+﻿@model Pharmacy.Models.ManufacturingPlant
+
+@{
+    ViewBag.Title = "Create Manufacturing Plant";
+}
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background: linear-gradient(to right, #4facfe, #00f2fe); /* Beautiful blue gradient */
+        font-family: 'Arial', sans-serif;
+    }
+
+    .container-box {
+        max-width: 600px;
+        margin: 50px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        color: #007bff;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    h4 {
+        color: #6c757d;
+    }
+
+    .btn-create {
+        background: #28a745;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+        .btn-create:hover {
+            background: #218838;
+        }
+
+    .btn-back {
+        background: #6c757d;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+        .btn-back:hover {
+            background: #5a6268;
+        }
+
+    .input-box {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    .form-label {
+        font-weight: bold;
+        color: #495057;
+    }
+
+    .form-control {
+        border-radius: 6px;
+        padding: 10px;
+    }
+</style>
+
+<!-- Create Manufacturing Plant Form -->
+<div class="container-box">
+    <h2>Create Manufacturing Plant</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="input-box">
+            <h4>Plant Information</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Location, new { @class = "form-label" })
+                @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Contact, new { @class = "form-label" })
+                @Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Contact, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="text-end mt-3">
+            <button type="submit" class="btn btn-create">
+                <i class="fas fa-check"></i> Create
+            </button>
+            <a href="@Url.Action("Index")" class="btn btn-back">
+                <i class="fas fa-arrow-left"></i> Back to List
+            </a>
+        </div>
+    }
+</div>

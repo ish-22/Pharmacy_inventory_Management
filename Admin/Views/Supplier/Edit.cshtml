@@ -1,0 +1,90 @@
+﻿@model Admin.Models.Supplier
+
+@{
+    ViewBag.Title = "Edit Supplier";
+}
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background: #f4f7fc; /* Light gray background */
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 500px;
+        margin-top: 40px;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #333;
+        text-align: center;
+    }
+
+    .btn-custom {
+        border-radius: 5px;
+        font-weight: bold;
+        padding: 10px 15px;
+    }
+
+    .btn-save {
+        background: #007bff;
+        color: white;
+    }
+
+        .btn-save:hover {
+            background: #0056b3;
+        }
+
+    .btn-back {
+        background: #6c757d;
+        color: white;
+    }
+
+        .btn-back:hover {
+            background: #495057;
+        }
+
+    label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .form-control {
+        border-radius: 5px;
+    }
+</style>
+
+<!-- Form Container -->
+<div class="container">
+    <h2>Edit Supplier</h2>
+    <hr />
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Email, new { @class = "form-label" })
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Enter supplier email" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Password, new { @class = "form-label" })
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Enter new password" })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Buttons -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-custom btn-save">Save Changes</button>
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-custom btn-back ms-2" })
+        </div>
+    }
+</div>

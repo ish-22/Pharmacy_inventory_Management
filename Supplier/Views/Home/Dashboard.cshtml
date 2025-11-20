@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "Supplier Dashboard";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #1e2a44 0%, #4a69bd 100%);
+        min-height: 100vh;
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .container-fluid {
+        padding: 0;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+        min-height: 100vh;
+        background: rgba(30, 42, 68, 0.95);
+        color: white;
+        padding: 20px;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+        position: fixed;
+        width: 250px;
+    }
+
+        .sidebar h4 {
+            text-align: center;
+            padding: 20px 0;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar hr {
+            border: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 15px 0;
+        }
+
+        .sidebar .nav-link {
+            color: white;
+            font-size: 16px;
+            padding: 12px 20px;
+            margin: 5px 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+            .sidebar .nav-link:hover {
+                background: #6b48ff;
+                transform: translateX(5px);
+            }
+
+            .sidebar .nav-link i {
+                margin-right: 10px;
+                width: 20px;
+            }
+
+    /* Main Content */
+    .main-content {
+        margin-left: 250px;
+        padding: 40px;
+        min-height: 100vh;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px 0 0 15px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .main-content h2 {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .main-content p {
+            color: #34495e;
+            font-size: 1.1em;
+        }
+
+    /* Buttons (for potential future use) */
+    .btn-dashboard {
+        background: #3498db;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-dashboard:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+    .btn-create {
+        background: #2ecc71;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-create:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+    .btn-view {
+        background: #e67e22;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-view:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <h4><i class="fas fa-box-open"></i> Supplier Panel</h4>
+            <hr />
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Create", "Tender")"><i class="fas fa-file-alt"></i> Create Tenders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Tender")"><i class="fas fa-chart-bar"></i> View Tender Proposals</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Dashboard Content -->
+        <main class="main-content">
+            <h2>Welcome to the Supplier Dashboard</h2>
+            <p>Manage your tenders and proposals with ease.</p>
+            <!-- Optional buttons for future interactivity -->
+            <div class="mt-4">
+                <a href="#" class="btn btn-dashboard">Dashboard Overview</a>
+                <a href="@Url.Action("Create", "Tender")" class="btn btn-create">New Tender</a>
+                <a href="@Url.Action("Index", "Tender")" class="btn btn-view">View Proposals</a>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- Include Font Awesome for icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+

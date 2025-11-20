@@ -1,0 +1,245 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\SPC\\SPC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4499CA93-9D58-4F88-A114-378B8575194D}|..\\Staff\\Staff.csproj|c:\\spc\\staff\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00B28B5C-2D15-4E44-AD3C-5B911AFCDCA0}|..\\Admin\\Admin.csproj|c:\\spc\\admin\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4499CA93-9D58-4F88-A114-378B8575194D}|..\\Staff\\Staff.csproj|c:\\spc\\staff\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4499CA93-9D58-4F88-A114-378B8575194D}|..\\Staff\\Staff.csproj|c:\\spc\\staff\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA5F46A-1B32-4EBC-8762-0D3D6A4CB4E9}|..\\Pharmacy\\Pharmacy.csproj|c:\\spc\\pharmacy\\views\\orderdetails\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA5F46A-1B32-4EBC-8762-0D3D6A4CB4E9}|..\\Pharmacy\\Pharmacy.csproj|c:\\spc\\pharmacy\\controllers\\orderdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA5F46A-1B32-4EBC-8762-0D3D6A4CB4E9}|..\\Pharmacy\\Pharmacy.csproj|c:\\spc\\pharmacy\\controllers\\pharmacycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4499CA93-9D58-4F88-A114-378B8575194D}|..\\Staff\\Staff.csproj|c:\\spc\\staff\\controllers\\orderdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58D56D4C-B742-4D9F-8517-209AF28D3A6D}|SPC.csproj|c:\\spc\\spc\\controllers\\staffauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58D56D4C-B742-4D9F-8517-209AF28D3A6D}|SPC.csproj|solutionrelative:controllers\\staffauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA5F46A-1B32-4EBC-8762-0D3D6A4CB4E9}|..\\Pharmacy\\Pharmacy.csproj|c:\\spc\\pharmacy\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA5F46A-1B32-4EBC-8762-0D3D6A4CB4E9}|..\\Pharmacy\\Pharmacy.csproj|c:\\spc\\pharmacy\\views\\orderdetails\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA5F46A-1B32-4EBC-8762-0D3D6A4CB4E9}|..\\Pharmacy\\Pharmacy.csproj|c:\\spc\\pharmacy\\views\\orderdetails\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA5F46A-1B32-4EBC-8762-0D3D6A4CB4E9}|..\\Pharmacy\\Pharmacy.csproj|c:\\spc\\pharmacy\\views\\orderdetails\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA5F46A-1B32-4EBC-8762-0D3D6A4CB4E9}|..\\Pharmacy\\Pharmacy.csproj|c:\\spc\\pharmacy\\views\\orderdetails\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\SPC\\Staff\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "..\\Staff\\Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "C:\\SPC\\Staff\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "..\\Staff\\Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAKQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-22T18:55:35.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\SPC\\Admin\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "..\\Admin\\Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "C:\\SPC\\Admin\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "..\\Admin\\Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-22T18:52:26.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\SPC\\Staff\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "..\\Staff\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\SPC\\Staff\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "..\\Staff\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-22T18:50:01.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PharmacyController.cs",
+              "DocumentMoniker": "C:\\SPC\\Pharmacy\\Controllers\\PharmacyController.cs",
+              "RelativeDocumentMoniker": "..\\Pharmacy\\Controllers\\PharmacyController.cs",
+              "ToolTip": "C:\\SPC\\Pharmacy\\Controllers\\PharmacyController.cs",
+              "RelativeToolTip": "..\\Pharmacy\\Controllers\\PharmacyController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T18:45:22.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderDetailsController.cs",
+              "DocumentMoniker": "C:\\SPC\\Staff\\Controllers\\OrderDetailsController.cs",
+              "RelativeDocumentMoniker": "..\\Staff\\Controllers\\OrderDetailsController.cs",
+              "ToolTip": "C:\\SPC\\Staff\\Controllers\\OrderDetailsController.cs",
+              "RelativeToolTip": "..\\Staff\\Controllers\\OrderDetailsController.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAHUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T18:33:16.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StaffAuthController.cs",
+              "DocumentMoniker": "C:\\SPC\\SPC\\Controllers\\StaffAuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StaffAuthController.cs",
+              "ToolTip": "C:\\SPC\\SPC\\Controllers\\StaffAuthController.cs",
+              "RelativeToolTip": "Controllers\\StaffAuthController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwDAAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T18:05:20.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\SPC\\Staff\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "..\\Staff\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\SPC\\Staff\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "..\\Staff\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwDIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T18:04:11.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\SPC\\Pharmacy\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "..\\Pharmacy\\Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "C:\\SPC\\Pharmacy\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "..\\Pharmacy\\Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAGoAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-22T17:57:04.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\SPC\\Pharmacy\\Views\\OrderDetails\\Create.cshtml",
+              "RelativeDocumentMoniker": "..\\Pharmacy\\Views\\OrderDetails\\Create.cshtml",
+              "ToolTip": "C:\\SPC\\Pharmacy\\Views\\OrderDetails\\Create.cshtml",
+              "RelativeToolTip": "..\\Pharmacy\\Views\\OrderDetails\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJ0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-22T17:41:43.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\SPC\\Pharmacy\\Views\\OrderDetails\\Details.cshtml",
+              "RelativeDocumentMoniker": "..\\Pharmacy\\Views\\OrderDetails\\Details.cshtml",
+              "ToolTip": "C:\\SPC\\Pharmacy\\Views\\OrderDetails\\Details.cshtml",
+              "RelativeToolTip": "..\\Pharmacy\\Views\\OrderDetails\\Details.cshtml",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAIwKUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-22T17:40:23.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\SPC\\Pharmacy\\Views\\OrderDetails\\Index.cshtml",
+              "RelativeDocumentMoniker": "..\\Pharmacy\\Views\\OrderDetails\\Index.cshtml",
+              "ToolTip": "C:\\SPC\\Pharmacy\\Views\\OrderDetails\\Index.cshtml",
+              "RelativeToolTip": "..\\Pharmacy\\Views\\OrderDetails\\Index.cshtml",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAIwJEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-22T17:39:12.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\SPC\\Pharmacy\\Views\\OrderDetails\\Delete.cshtml",
+              "RelativeDocumentMoniker": "..\\Pharmacy\\Views\\OrderDetails\\Delete.cshtml",
+              "ToolTip": "C:\\SPC\\Pharmacy\\Views\\OrderDetails\\Delete.cshtml",
+              "RelativeToolTip": "..\\Pharmacy\\Views\\OrderDetails\\Delete.cshtml",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAIwKoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-22T17:38:21.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\SPC\\Pharmacy\\Views\\OrderDetails\\Edit.cshtml",
+              "RelativeDocumentMoniker": "..\\Pharmacy\\Views\\OrderDetails\\Edit.cshtml",
+              "ToolTip": "C:\\SPC\\Pharmacy\\Views\\OrderDetails\\Edit.cshtml",
+              "RelativeToolTip": "..\\Pharmacy\\Views\\OrderDetails\\Edit.cshtml",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAIwI4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-22T17:38:06.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderDetailsController.cs",
+              "DocumentMoniker": "C:\\SPC\\Pharmacy\\Controllers\\OrderDetailsController.cs",
+              "RelativeDocumentMoniker": "..\\Pharmacy\\Controllers\\OrderDetailsController.cs",
+              "ToolTip": "C:\\SPC\\Pharmacy\\Controllers\\OrderDetailsController.cs",
+              "RelativeToolTip": "..\\Pharmacy\\Controllers\\OrderDetailsController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwAwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T17:31:34.803Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

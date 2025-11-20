@@ -1,0 +1,42 @@
+﻿@model Pharmacy.Models.Drug
+
+@{
+    ViewBag.Title = "Drug Details";
+}
+
+<div class="container mt-5 p-4" style="background-color: #e3f2fd; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.2);">
+    <h2 class="text-center text-primary">📋 Drug Details</h2>
+    <hr />
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <tbody>
+                <tr>
+                    <th class="bg-primary text-white">Drug Name</th>
+                    <td>@Html.DisplayFor(model => model.Name)</td>
+                </tr>
+                <tr>
+                    <th class="bg-primary text-white">Warehouse ID</th>
+                    <td>@Html.DisplayFor(model => model.WarehouseID)</td>
+                </tr>
+                <tr>
+                    <th class="bg-primary text-white">Stock Quantity</th>
+                    <td>@Html.DisplayFor(model => model.StockQuantity)</td>
+                </tr>
+                <tr>
+                    <th class="bg-primary text-white">Expiry Date</th>
+                    <td>@Html.DisplayFor(model => model.ExpiryDate)</td>
+                </tr>
+                <tr>
+                    <th class="bg-primary text-white">Type</th>
+                    <td>@Html.DisplayFor(model => model.Type)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="@Url.Action("Edit", new { id = Model.DrugId })" class="btn btn-warning px-4">✏️ Edit</a>
+        <a href="@Url.Action("Index")" class="btn btn-secondary px-4">🔙 Back to List</a>
+    </div>
+</div>

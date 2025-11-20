@@ -1,0 +1,94 @@
+﻿@model Admin.Models.pharmacy
+
+@{
+    ViewBag.Title = "Edit Pharmacy";
+}
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background: #e3f2fd; /* Light blue background */
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #007bff;
+        text-align: center;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .btn-custom {
+        border-radius: 5px;
+        font-weight: bold;
+        padding: 8px 12px;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-save {
+        background: #28a745;
+    }
+
+        .btn-save:hover {
+            background: #218838;
+        }
+
+    .btn-back {
+        background: #007bff;
+    }
+
+        .btn-back:hover {
+            background: #0056b3;
+        }
+</style>
+
+<!-- Main Container -->
+<div class="container">
+    <h2>Edit Pharmacy</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                <input type="submit" value="Save Changes" class="btn btn-custom btn-save" />
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-custom btn-back" })
+            </div>
+        </div>
+    }
+</div>

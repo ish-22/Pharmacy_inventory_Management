@@ -1,0 +1,109 @@
+﻿@model Pharmacy.Models.pharmacy
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background: linear-gradient(135deg, #89f7fe, #66a6ff); /* Cool blue gradient */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background: #ccc;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .btn-custom {
+        border-radius: 5px;
+        font-weight: bold;
+        padding: 8px 12px;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        margin: 5px;
+        text-align: center;
+    }
+
+    .btn-create {
+        background: #28a745; /* Green */
+    }
+
+        .btn-create:hover {
+            background: #218838;
+        }
+
+    .btn-back {
+        background: #007bff; /* Blue */
+    }
+
+        .btn-back:hover {
+            background: #0056b3;
+        }
+</style>
+
+<!-- Main Container -->
+<div class="container">
+    <h2>Create Pharmacy</h2>
+    <hr />
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                <input type="submit" value="Create" class="btn btn-custom btn-create" />
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-custom btn-back" })
+            </div>
+        </div>
+    }
+</div>

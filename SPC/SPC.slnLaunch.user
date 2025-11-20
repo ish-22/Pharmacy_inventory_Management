@@ -1,0 +1,27 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "SPC.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\Staff\\Staff.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\Admin\\Admin.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\Supplier\\Supplier.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\Pharmacy\\Pharmacy.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
